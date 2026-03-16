@@ -1,0 +1,178 @@
+/* Importando uma fonte mais moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #0f172a; /* Azul Marinho quase preto */
+    color: #f1f5f9; 
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container { 
+    max-width: 750px; 
+    width: 100%;
+    background: #1e293b; /* Cinza azulado escuro */
+    padding: 40px; 
+    border-radius: 16px; 
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); 
+    border: 1px solid #334155;
+}
+
+header { 
+    text-align: center; 
+    margin-bottom: 40px; 
+}
+
+header h2 { 
+    color: #38bdf8; /* Azul Neon */
+    font-size: 28px; 
+    letter-spacing: -0.5px;
+}
+
+header p { 
+    color: #94a3b8; 
+    margin-top: 10px; 
+}
+
+/* Caixa de Busca */
+.search-box { 
+    display: flex; 
+    gap: 12px; 
+    margin-bottom: 40px; 
+}
+
+input { 
+    flex: 1; 
+    padding: 16px; 
+    background-color: #0f172a;
+    border: 2px solid #334155; 
+    border-radius: 10px; 
+    font-size: 16px; 
+    color: #f1f5f9;
+    transition: all 0.3s ease;
+}
+
+input:focus { 
+    border-color: #38bdf8; 
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+    outline: none; 
+}
+
+button { 
+    padding: 16px 30px; 
+    background: #38bdf8; 
+    color: #0f172a; 
+    border: none; 
+    border-radius: 10px; 
+    font-weight: 700; 
+    text-transform: uppercase;
+    cursor: pointer; 
+    transition: all 0.3s ease;
+}
+
+button:hover { 
+    background: #7dd3fc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+}
+
+/* Card de Resultados */
+.card { 
+    background: #0f172a;
+    border: 1px solid #334155; 
+    border-radius: 12px; 
+    padding: 25px; 
+    animation: fadeIn 0.5s ease-out; 
+}
+
+.card-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 25px; 
+    border-bottom: 1px solid #334155; 
+    padding-bottom: 15px; 
+}
+
+.card-header h3 {
+    color: #f1f5f9;
+    font-size: 20px;
+}
+
+.status-badge { 
+    background: rgba(34, 197, 94, 0.1); 
+    color: #4ade80; 
+    border: 1px solid #4ade80;
+    padding: 4px 12px; 
+    border-radius: 6px; 
+    font-size: 11px; 
+    font-weight: bold; 
+}
+
+/* Grid de Informações */
+.info-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 25px; 
+}
+
+.field label, .field-full label { 
+    display: block; 
+    font-size: 11px; 
+    color: #64748b; 
+    text-transform: uppercase; 
+    font-weight: 700; 
+    margin-bottom: 6px; 
+    letter-spacing: 1px;
+}
+
+.field span, .field-full p { 
+    font-size: 16px; 
+    color: #cbd5e1; 
+    line-height: 1.5;
+}
+
+.field-full { 
+    margin-top: 25px; 
+    padding-top: 20px; 
+    border-top: 1px solid #334155; 
+}
+
+/* Efeitos de carregamento e erro */
+.spinner { 
+    width: 40px; 
+    height: 40px; 
+    border: 4px solid #1e293b; 
+    border-top: 4px solid #38bdf8; 
+    border-radius: 50%; 
+    margin: 20px auto; 
+    animation: spin 1s linear infinite; 
+}
+
+.error { 
+    color: #f87171; 
+    text-align: center; 
+    margin-top: 20px; 
+    font-weight: 500; 
+    background: rgba(248, 113, 113, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Responsividade para Celular */
+@media (max-width: 600px) {
+    .info-grid { grid-template-columns: 1fr; }
+    .search-box { flex-direction: column; }
+    button { width: 100%; }
+}

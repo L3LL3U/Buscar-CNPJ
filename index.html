@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta CNPJ Oficial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h2>Consulta de CNPJ</h2>
+            <p>Insira os 14 dígitos para obter os dados da empresa</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="cnpjInput" placeholder="00.000.000/0001-91" maxlength="18">
+            <button onclick="buscarCNPJ()">Consultar</button>
+        </div>
+
+        <div id="loading" class="spinner" style="display: none;"></div>
+
+        <div id="resultado" class="card" style="display: none;">
+            <div class="card-header">
+                <h3 id="razaoSocial"></h3>
+                <span class="status-badge">Ativa</span>
+            </div>
+            
+            <div class="info-grid">
+                <div class="field">
+                    <label>Nome Fantasia</label>
+                    <span id="nomeFantasia"></span>
+                </div>
+                <div class="field">
+                    <label>CNPJ</label>
+                    <span id="cnpjDisplay"></span>
+                </div>
+                <div class="field">
+                    <label>Capital Social</label>
+                    <span id="capitalSocial"></span>
+                </div>
+                <div class="field">
+                    <label>Telefone</label>
+                    <span id="telefone"></span>
+                </div>
+            </div>
+
+            <div class="field-full">
+                <label>Atividade Econômica Principal</label>
+                <p id="atividade"></p>
+            </div>
+
+            <div class="field-full">
+                <label>Endereço Completo</label>
+                <p id="endereco"></p>
+            </div>
+        </div>
+
+        <p id="errorMsg" class="error"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
